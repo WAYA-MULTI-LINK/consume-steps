@@ -1,0 +1,18 @@
+name: Test Custom Action
+on:
+  push:
+    branches:
+      - main
+jobs:
+  test-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Run my custom step
+        id: custom-step
+        uses: WAYA-MULTI-LINK/custom-steps/my-custom-step@v1
+        with:
+          my-input: Hello from another repo!
+      - name: Print the output
+        run: echo "The output was ${{ steps.custom-step.outputs.my-output }}"

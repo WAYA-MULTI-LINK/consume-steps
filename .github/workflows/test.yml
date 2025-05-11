@@ -12,7 +12,7 @@ jobs:
       - name: Run my custom step
         id: custom-step
         uses: WAYA-MULTI-LINK/custom-steps/my-custom-step@v1
-        with:
-          my-input: Added another response
+        # with:
+        #   my-input: Added another response
       - name: Print the output
         run: echo "The output was ${{ steps.custom-step.outputs.my-output }}"
